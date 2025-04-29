@@ -37,5 +37,24 @@
         public BookAuthor(int ID)
             : this(ID, "Unknown", "Author", default(DateOnly))
         { }
+
+        public override bool Equals(object? obj)
+        {
+            if (this == obj)
+            {
+                return true;
+            }
+            else if (!(obj is BookAuthor))
+            {
+                return false;
+            }
+
+            BookAuthor author = (BookAuthor)obj;
+
+            return this.ID.Equals(author.ID)
+                && this.FirstName.Equals(author.FirstName)
+                && this.LastName.Equals(author.LastName)
+                && this.Birthday.Equals(author.Birthday);
+        }
     }
 }

@@ -69,7 +69,21 @@
         /// <returns>True if the 2 objects are equal, false otherwise</returns>
         public override bool Equals(object? obj)
         {
-            throw new NotImplementedException();
+            if (this == obj)
+            {
+                return true;
+            }
+            else if (!(obj is Book))
+            {
+                return false;
+            }
+
+            Book book = (Book)obj;
+
+            return this.ID.Equals(book.ID)
+                && this.Title.Equals(book.Title)
+                && this.PublicationYear.Equals(book.PublicationYear)
+                && this.Author.Equals(book.Author);
         }
 
         /// <summary>

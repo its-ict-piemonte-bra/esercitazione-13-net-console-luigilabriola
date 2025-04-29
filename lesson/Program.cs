@@ -15,6 +15,7 @@
             Book book2 = new Book(2, "esempio 2", anonymous, 1991);
             Book book3 = new Book(3, "esempio 3", author, 1992);
 
+            Console.WriteLine(book.Equals(1));
             //Console.WriteLine(book.Author.ID);
             //Console.WriteLine(book2.Author.ID);
             //Console.WriteLine(book3.Author.ID);
@@ -22,6 +23,10 @@
             Book[] books = { book3, book, book2 };
 
             Array.Sort(books);
+            //int index = Array.BinarySearch(books, book2);
+            //index = Array.IndexOf(books, book2);
+            //Console.WriteLine("Indice "+index);
+
 
             foreach (Book currentBook in books)
             {
