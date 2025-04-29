@@ -1,4 +1,6 @@
-﻿namespace lesson
+﻿using System.Diagnostics;
+
+namespace lesson
 {
     class BookAuthor
     {
@@ -51,10 +53,15 @@
 
             BookAuthor author = (BookAuthor)obj;
 
-            return this.ID.Equals(author.ID)
-                && this.FirstName.Equals(author.FirstName)
-                && this.LastName.Equals(author.LastName)
-                && this.Birthday.Equals(author.Birthday);
+            return this.ID.Equals(author.ID) &&
+                this.FirstName.Equals(author.FirstName) &&
+                this.LastName.Equals(author.LastName) &&
+                this.Birthday.Equals(author.Birthday);
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {this.ID} - Name: {this.FirstName} {this.LastName} - Birthday: {this.Birthday.ToString("dd/MM/yyyy")}";
         }
     }
 }
